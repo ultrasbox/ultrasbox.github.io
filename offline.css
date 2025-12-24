@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'my-font';
-  src: url(./fonts/myfont.ttf) format("ttf");
+  font-family: 'B612-a';
+  src: url(./fonts/B612-Regular.ttf) format("ttf");
 }
 
 @font-face {
-  font-family: 'my-font';
+  font-family: 'Roboto-a';
   src: url(../fonts/myfont.ttf) format("ttf");
 }
