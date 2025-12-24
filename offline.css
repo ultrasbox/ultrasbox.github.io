@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'my-font';
+  src: url(./fonts/myfont.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: 'my-font';
+  src: url(../fonts/myfont.ttf) format("ttf");
+}
