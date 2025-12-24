@@ -26,6 +26,7 @@ const urlsToCache = [
   './sample_extractor.html',
   './synth_example.html',
   './404.html',
+  './offline.css',
 
   // === /player/ ===
   './player/index.html',
@@ -81,7 +82,10 @@ const urlsToCache = [
   './theme_resources/moveNotesUp.png',
   './theme_resources/stripesbg.gif',
   './theme_resources/stripesbg_light.gif',
-  './theme_resources/wackybox_cursor.png'
+  './theme_resources/wackybox_cursor.png',
+
+  //fontファイル
+  './font/'
 ];
 
 // 💾 インストール時にキャッシュ作成
