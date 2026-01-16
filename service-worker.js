@@ -29,7 +29,7 @@ const urlsToCache = [
   './offline.css',
   './jquery-3.4.1.min.js',
   './select2.min.css',
-  '',
+  './select2.min.js',
 
   // === /player/ ===
   './player/index.html',
