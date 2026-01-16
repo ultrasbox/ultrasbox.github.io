@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
@@ -12,8 +12,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/icon_32.png" />
 	<link href="../offline.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" rel="stylesheet" media="none" onload="if (this.media != 'all') this.media='all';" /> <!-- this is a trick to load CSS asynchronously. -->
-	<meta name="robots" content="noindex, nofollow" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" rel="stylesheet" media="none" onload="if (this.media != 'all') this.media='all';" /> <meta name="robots" content="noindex, nofollow" />
 	<style>
 		html {
 			width: 100vw;
@@ -34,10 +33,38 @@
 			flex-direction: column;
 			align-items: stretch;
 		}
+		/* 追加：入力周りのスタイル調整 */
+		.input-container {
+			padding: 10px;
+			background: #333;
+			display: flex;
+			gap: 10px;
+		}
+		input[name="url"] {
+			flex-grow: 1;
+			background: #222;
+			color: white;
+			border: 1px solid #555;
+			padding: 5px;
+		}
+		button#updateBtn {
+			background: #444;
+			color: white;
+			border: 1px solid #777;
+			padding: 5px 15px;
+			cursor: pointer;
+		}
 	</style>
+	<script src="./../jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
 </head>
 <body>
-	<input name="url" type="text">
+	<div class="input-container">
+		<input name="url" type="text" id="songUrlInput" placeholder="Enter song data...">
+		<button type="button" id="updateBtn">Update URL</button>
+	</div>
+
 	<script type="text/javascript">
 		function browserHasRequiredFeatures() {
 			"use strict";
@@ -57,7 +84,6 @@
 		}
 		
 		if (browserHasRequiredFeatures()) {
-			// Go ahead and load js beepbox editor interface:
 			var fileref = document.createElement("script");
 			fileref.setAttribute("type", "text/javascript");
 			fileref.setAttribute("src", "beepbox_player.min.js");
@@ -65,6 +91,14 @@
 		} else {
 			document.body.innerHTML = "Sorry, BeepBox doesn't support your browser. Try a recent version of Chrome, Firefox, Edge, Safari, or Opera.";
 		}
+
+		// --- ハッシュ更新処理の追加 ---
+		document.getElementById('updateBtn').addEventListener('click', function() {
+			const inputVal = document.getElementById('songUrlInput').value;
+			// 入力内容をURLのハッシュ（#以降）に設定
+			window.location.hash = inputVal;
+			console.log("Hash updated to: " + window.location.hash);
+		});
 	</script>
 </body>
 </html>
