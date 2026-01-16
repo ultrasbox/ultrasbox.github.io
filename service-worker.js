@@ -27,6 +27,9 @@ const urlsToCache = [
   './synth_example.html',
   './404.html',
   './offline.css',
+  './jquery-3.4.1.min.js',
+  '',
+  '',
 
   // === /player/ ===
   './player/index.html',
