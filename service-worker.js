@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = 'ultraabox-cache-v8';
+const CACHE_NAME = 'ultraabox-cache-v9';
 const urlsToCache = [
   './',
   './index.html',
