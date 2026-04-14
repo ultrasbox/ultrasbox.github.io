@@ -25,6 +25,8 @@
     <meta property="og:image" content="/icon_maskable_192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+	  
+<link href="./offline.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet" media="none" onload="if (this.media != 'all') this.media='all';" /> <!-- this is a trick to load CSS asynchronously. -->
     <style type="text/css">
 
@@ -410,6 +412,14 @@
 		if (/^#[1-8]/.test(location.hash)) {
 			document.getElementById("linkTo3_0").href += location.hash;
 		}
+    </script>
+	<script>
+      // Service Worker 登録部分を修正
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(() => console.log('✅ Service Worker registered'))
+          .catch(err => console.error('⚠️ SW registration failed:', err));
+      }
     </script>
 </body>
 </html>
